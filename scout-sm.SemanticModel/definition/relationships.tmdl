@@ -1,0 +1,12 @@
+relationship 0aec980c-c05b-d03d-6073-123def07f904
+	fromColumn: player_session_stats.player_id
+	toColumn: players.player_id
+
+relationship 4a0ee098-d004-8381-7b75-7cc3fea65a48
+	fromColumn: player_session_stats.session_id
+	toColumn: sessions.session_id
+
+relationship aad14519-ad41-6f23-7250-77ada3ba352c
+	fromColumn: tracks.session_id
+	toColumn: player_session_stats.session_id
+

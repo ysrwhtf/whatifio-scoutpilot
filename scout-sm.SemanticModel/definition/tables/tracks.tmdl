@@ -1,0 +1,73 @@
+table tracks
+	lineageTag: fd9dcd7a-1e19-4018-81cc-7c70ea09054f
+	sourceLineageTag: [silver].[tracks]
+
+	column session_id
+		dataType: string
+		lineageTag: 570c7090-9128-4683-9c03-389231e9eb47
+		sourceLineageTag: session_id
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column frame
+		dataType: int64
+		formatString: 0
+		lineageTag: 163b72e9-72e0-495e-a320-a5d975b18c68
+		sourceLineageTag: frame
+		summarizeBy: sum
+		sourceColumn: frame
+
+		annotation SummarizationSetBy = Automatic
+
+	column track_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a8f54c77-8e15-4e04-b798-8968961727c2
+		sourceLineageTag: track_id
+		summarizeBy: sum
+		sourceColumn: track_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp_s
+		dataType: double
+		lineageTag: b6515215-38a5-476b-8310-606472828771
+		sourceLineageTag: timestamp_s
+		summarizeBy: sum
+		sourceColumn: timestamp_s
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column court_x_m
+		dataType: double
+		lineageTag: 7ea84d7d-83f3-484e-9110-c0168a8eee62
+		sourceLineageTag: court_x_m
+		summarizeBy: sum
+		sourceColumn: court_x_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column court_y_m
+		dataType: double
+		lineageTag: 15e737d3-5403-4364-a63d-09bbee822836
+		sourceLineageTag: court_y_m
+		summarizeBy: sum
+		sourceColumn: court_y_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition tracks = entity
+		mode: directLake
+		source
+			entityName: tracks
+			schemaName: silver
+			expressionSource: 'DirectLake - scout_lh'
+

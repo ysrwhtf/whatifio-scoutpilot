@@ -1,0 +1,92 @@
+table player_session_stats
+	lineageTag: 28eec638-ce37-40b0-9b7b-6074a5fdef4c
+	sourceLineageTag: [gold].[player_session_stats]
+
+	column session_id
+		dataType: string
+		lineageTag: 6da38fd4-5a6e-4078-900c-6675ed10a970
+		sourceLineageTag: session_id
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 566e14ed-1ba1-4b35-a156-856efd71f4de
+		sourceLineageTag: session_date
+		summarizeBy: none
+		sourceColumn: session_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_id
+		dataType: string
+		lineageTag: 83a50df1-229a-423e-a586-845e56a1b06f
+		sourceLineageTag: player_id
+		summarizeBy: none
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		lineageTag: 1232b1c7-6420-46f4-98d1-087608312767
+		sourceLineageTag: player_name
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_m
+		dataType: double
+		lineageTag: a5472580-d936-4440-8942-92380ef7414e
+		sourceLineageTag: distance_m
+		summarizeBy: sum
+		sourceColumn: distance_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_speed_kmh
+		dataType: double
+		lineageTag: 0561a3ae-b13b-4159-bbf5-3661dce8477d
+		sourceLineageTag: avg_speed_kmh
+		summarizeBy: sum
+		sourceColumn: avg_speed_kmh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_speed_kmh
+		dataType: double
+		lineageTag: bfb0d709-2103-451b-9671-66896ee0c9d6
+		sourceLineageTag: max_speed_kmh
+		summarizeBy: sum
+		sourceColumn: max_speed_kmh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column active_seconds
+		dataType: double
+		lineageTag: 8f9c5d97-d830-4502-b33f-a2d53b67cc2f
+		sourceLineageTag: active_seconds
+		summarizeBy: sum
+		sourceColumn: active_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition player_session_stats = entity
+		mode: directLake
+		source
+			entityName: player_session_stats
+			schemaName: gold
+			expressionSource: 'DirectLake - scout_lh'
+

@@ -1,0 +1,11 @@
+expression 'DirectLake - scout_lh' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/f3a9deba-3b22-4ae2-95c0-27c1d12e8f49/231954fd-0578-472d-894d-7905cdf13a6b", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 82186343-b8e8-4c8f-aa47-c2e534f92281
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[silver].[session_players]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[bronze].[detections]"}},"objectType":"Table"}]
+

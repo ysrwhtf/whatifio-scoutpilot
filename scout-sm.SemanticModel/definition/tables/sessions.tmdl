@@ -1,0 +1,59 @@
+table sessions
+	lineageTag: 347aa35a-b386-44e9-acf4-bb196543e375
+	sourceLineageTag: [silver].[sessions]
+
+	column session_id
+		dataType: string
+		lineageTag: f27c08bf-3559-4492-906b-b309b946f1dc
+		sourceLineageTag: session_id
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b1312a48-9bbe-4e0c-a55b-6f554869a122
+		sourceLineageTag: session_date
+		summarizeBy: none
+		sourceColumn: session_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column venue
+		dataType: string
+		lineageTag: 633d230d-f959-4168-a100-8954432f5a77
+		sourceLineageTag: venue
+		summarizeBy: none
+		sourceColumn: venue
+
+		annotation SummarizationSetBy = Automatic
+
+	column sport
+		dataType: string
+		lineageTag: ee3092c5-5f62-4c94-af43-c5508fb8bdc3
+		sourceLineageTag: sport
+		summarizeBy: none
+		sourceColumn: sport
+
+		annotation SummarizationSetBy = Automatic
+
+	column fps
+		dataType: double
+		lineageTag: ec6e079f-9f67-4879-a9fe-59da1fcc2f3d
+		sourceLineageTag: fps
+		summarizeBy: none
+		sourceColumn: fps
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition sessions = entity
+		mode: directLake
+		source
+			entityName: sessions
+			schemaName: silver
+			expressionSource: 'DirectLake - scout_lh'
+

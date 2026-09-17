@@ -1,0 +1,47 @@
+table players
+	lineageTag: 7de49c62-a7df-4419-a54d-5a078d576964
+	sourceLineageTag: [silver].[players]
+
+	column player_id
+		dataType: string
+		lineageTag: b81bd5f2-3689-447c-aee1-b637ba6f4ed1
+		sourceLineageTag: player_id
+		summarizeBy: none
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: e7b623f8-a381-45e2-8043-647f6cb8e304
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_group
+		dataType: string
+		lineageTag: a53f1dc3-2d7f-4111-9212-b653054c5055
+		sourceLineageTag: age_group
+		summarizeBy: none
+		sourceColumn: age_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column team
+		dataType: string
+		lineageTag: aebbe7db-283a-4017-b05a-9b663199259d
+		sourceLineageTag: team
+		summarizeBy: none
+		sourceColumn: team
+
+		annotation SummarizationSetBy = Automatic
+
+	partition players = entity
+		mode: directLake
+		source
+			entityName: players
+			schemaName: silver
+			expressionSource: 'DirectLake - scout_lh'
+

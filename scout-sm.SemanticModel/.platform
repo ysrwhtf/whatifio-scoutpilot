@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "scout-sm"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ab02a1bb-2695-8662-4a14-7d5dd423f961"
+  }
+}
